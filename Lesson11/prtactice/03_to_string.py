@@ -2,8 +2,10 @@
 
 
 def to_string(func):
-    # Ваш код здесь
-    pass
+    def wrapper_function(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return str(result)
+    return wrapper_function
 
 @to_string
 def calculate_sum(a, b):
